@@ -9,17 +9,13 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+cons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
@@ -81,6 +77,7 @@
         <div class="col-lg-12 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column align-items-center">
           <h1>Bass Connections 2022-2023</h1>
           <h2>Tracking Climate Change With Satellites and Artificial Intelligence</h2>
+          <h3>Margaret Brooks, Francesca Chiappetta, Alex Desbans, Neel Gajjar, Julia Kourelakos, Saad Lahrichi, Vaishvi Patel, Edna Zhang, Ruohan Zhang, Shufan Xia</h3>
           <div class="d-flex">
             <a href="https://github.com/energydatalab/BassConnections22-23" class="btn-get-started scrollto">Our Github</a>
           </div>
@@ -103,21 +100,17 @@
           </div>
 
           <div class="col-lg-6">
-            <img src="assets/img/about.png" class="img-fluid" alt="">
+            <img src="assets/img/indusriver-before.jpg" class="img-fluid" alt="">
+            <img src="assets/img/indusriver-after.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
+            <!-- <ul>
               <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
               <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
               <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda</li>
-            </ul>
+            </ul> -->
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur.
+              Geospatial data has become increasingly important across disciplines as the availability of remote sensing data, including satellite imagery, proliferates. Large, continuous streams of data are publicly available from satellites such as Sentinel and Landsat. Traditionally, this data must be labeled to be used for machine learning models. However, labeling large datasets is expensive, requiring a lot of time and labor. Many large and labeled data sets are not diverse in geographic location and so cannot be generalized to the world. Currently, using a model pre-trained on imageNet can mitigate the need for large amounts of labeled data. But this method has limited application to remote sensing tasks due to the unique characteristics of satellite images. Recent research has shown that self-supervised learning (SSL) techniques have the potential to develop robust feature representations of geospatial imagery data with minimal task-specific labeled data, including Caron et al. (2020), Chen et al. (2020), and Calhoun et al. (2022). We present GeoNet, a dataset that exceeds the scale and diversity of any prior datasets, and evaluate its usefulness by comparing the performance of SSL models pre-trained using three different methods: SSL pretraining on ImageNet, SSL pretraining on GeoNet, and SSL pretraining on ImageNet further trained on GeoNet.
             </p>
           </div>
         </div>
@@ -135,23 +128,23 @@
           </div>
           <div class="col-lg-4 col-md-6">
             <div class="icon-box">
-              <div class="icon"><i class="bi bi-laptop"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+              <div class="icon"><i class="bi bi-database"></i></div>
+              <h4 class="title"><a href="#contributions">Develop GeoNet</a></h4>
+              <p class="description">GeoNet is the largest and most diverse dataset to be curated for SSL in remote sensing. It contains over 10 million images across geographies, cities, rural regions, biomes, areas impacted by global change, across 8 half-seasons — the first and largest ever to capture geospatial, temporal, and semantic diversity for remote sensing data.</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
             <div class="icon-box">
-              <div class="icon"><i class="bi bi-card-checklist"></i></div>
-              <h4 class="title"><a href="">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+              <div class="icon"><i class="bi bi-graph-up"></i></div>
+              <h4 class="title"><a href="#contributions">Test different training paradigms of SwAV on GeoNet</a></h4>
+              <p class="description">Testing different training paradigms of SwAV on GeoNet to find that the use of GeoNet leads to state-of-the-art performance on six downstream recognition tasks in overhead imagery, especially in few-shot learning scenarios.</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
             <div class="icon-box">
-              <div class="icon"><i class="bi bi-clipboard-data"></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+              <div class="icon"><i class="bi bi-gear"></i></div>
+              <h4 class="title"><a href="#contributions">Publish GeoEye</a></h4>
+              <p class="description">GeoEye, a large pre-trained encoder for RGB imagery, significantly reduces the quantity of labeled data required for downstream recognition tasks, making recognition methods far more accessible and compute-efficient to researchers</p>
             </div>
           </div>
         </div>
