@@ -355,11 +355,12 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 80vh;
+  height: 100vh;
   background: #fff;
   padding-top: 82px;
   background-image: url('../img/earth-satellite.jpg');
   background-repeat: no-repeat;
+  background-position: center center;
   background-attachment: fixed; 
   background-size: 100% 100%;
 }
