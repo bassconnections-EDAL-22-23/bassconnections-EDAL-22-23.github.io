@@ -160,24 +160,24 @@ cons.min.css" rel="stylesheet">
             <span>Methods and Materials</span>
             <h2>Methods and Materials</h2>
           </div>
-          <div>
+          <div  class="col-lg-12 col-md-12">
             <p>
-              Our work follows 5 stages:
+              Our work follows the below 5 stages:
             </p>
-            <img src="assets/img/5-stages.png" class="img-fluid" alt="" width="70%" height="auto" text-align="center">
+            <img src="assets/img/5-stages.png" class="img-fluid" alt="" width="70%" height="auto">
           </div>
           <div class="col-lg-6">
             <img src="assets/img/sample-distribution.png" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
-            <p class="fst-italic">
+            <p>
               <br /> 
               To create an immense dataset that captures geospatial, temporal, and semantic diversity, we select features 
               that cover diversity across geographies (all continents and countries), cities (all major cities are included), 
               rural regions (across all continents and countries), biomes (forests, deserts, tundra, etc.), areas impacted by 
               global change (floods, fires, storms, etc.), across 8 half-seasons.
             </p>
-            <p class="fst-italic">
+            <p>
               The graph on the left shows that we draw samples from different locations covering the entire globe except Antarctica, 
               demonstrating the geospatial diversity of GeoNet. 
             </p>
@@ -189,7 +189,7 @@ cons.min.css" rel="stylesheet">
             <div class="col-lg-4 col-md-6">
               <img src="assets/img/method1_rural.png" class="img-fluid" alt="">
             </div>
-            <p class="fst-italic">
+            <p>
               Method1 consists of urban sampling and rural sampling. For urban sampling, we first draw samples randomly from a 
               Multivariate normal (MVN) distribution centered at city centers worldwide with probability weighted by log (population). 
               We then draw a random sample coordinate from the corresponding MVN distribution located within a 50 km radius.
@@ -207,12 +207,13 @@ cons.min.css" rel="stylesheet">
             <div class="col-lg-3 col-md-6">
               <img src="assets/img/method4_natural_disaster.png" class="img-fluid" alt="">
             </div>
-            <p class="fst-italic">
+            <p>
               Method2 includes all the coordinates of major human-built features that are associated with climate change, 
               including airports, mining sites, power plants, ports, oil rigs, wind turbines, and dams.
             </p>
-            <p class="fst-italic">
-              
+            <p>
+              Method3 uses a stratified sampling approach to include images from 10 different land types, 
+              including artificial land, cropland, grassland, tree-covered areas etc.
             </p>
           </div>
         </div>
