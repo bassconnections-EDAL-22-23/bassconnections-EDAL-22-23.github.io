@@ -183,19 +183,19 @@ cons.min.css" rel="stylesheet">
             </p>
           </div>
           <div class="row">
+            <p class="col-lg-4 col-md-6">
+              <strong>Method1</strong> consists of urban sampling and rural sampling. For urban sampling, we first draw samples randomly from a 
+              Multivariate normal (MVN) distribution centered at city centers worldwide with probability weighted by log (population). 
+              We then draw a random sample coordinate from the corresponding MVN distribution located within a 50 km radius.
+              For rural sampling, we randomly sample locations with population densities between 5 and 250 people per km^2 in a 
+              30 X 30 arcsec (1 X 1 km at the equator approximately) resolution population density map.
+            </p>
             <div class="col-lg-4 col-md-6">
               <img src="assets/img/method1_urban.png" class="img-fluid" alt="">
             </div>
             <div class="col-lg-4 col-md-6">
               <img src="assets/img/method1_rural.png" class="img-fluid" alt="">
             </div>
-            <p>
-              Method1 consists of urban sampling and rural sampling. For urban sampling, we first draw samples randomly from a 
-              Multivariate normal (MVN) distribution centered at city centers worldwide with probability weighted by log (population). 
-              We then draw a random sample coordinate from the corresponding MVN distribution located within a 50 km radius.
-              For rural sampling, we randomly sample locations with population densities between 5 and 250 people per km^2 in a 
-              30 X 30 arcsec (1 X 1 km at the equator approximately) resolution population density map.
-            </p>
           </div>
           <div class="row">
             <div class="col-lg-3 col-md-6">
@@ -207,13 +207,16 @@ cons.min.css" rel="stylesheet">
             <div class="col-lg-3 col-md-6">
               <img src="assets/img/method4_natural_disaster.png" class="img-fluid" alt="">
             </div>
-            <p>
-              Method2 includes all the coordinates of major human-built features that are associated with climate change, 
+            <p class="col-lg-3 col-md-6">
+              <strong>Method2</strong> includes all the coordinates of major human-built features that are associated with climate change, 
               including airports, mining sites, power plants, ports, oil rigs, wind turbines, and dams.
+              <strong>Method3</strong> uses a stratified sampling approach to include images from 10 different land types, 
+              including artificial land, cropland, grassland, tree-covered areas etc.
             </p>
             <p>
-              Method3 uses a stratified sampling approach to include images from 10 different land types, 
-              including artificial land, cropland, grassland, tree-covered areas etc.
+              Method4 samples locations vulnerable to climate change-related natural disasters. For each category of natural disaster 
+              (wildfires, cyclones, droughts, and floods), we use a “proxy variable” as the probability in a weighted random sampling, 
+              which either quantifies the severity of the disaster or its occurrence frequency. 
             </p>
           </div>
         </div>
