@@ -318,6 +318,7 @@ cons.min.css" rel="stylesheet">
                 224 x 224 pixels, aligning with the image size of the GeoEye dataset used for pretraining our model. We evaluate GeoNet on these datasets 
                 by comparing its performance  to the performance of fully-supervised models and other state-of-the-art SSL models.
               </p>
+              <img src="assets/img/benchmark_datasets.png" class="img-fluid" alt="">
             </div>
           </div>
 
@@ -330,11 +331,12 @@ cons.min.css" rel="stylesheet">
                 models and fully supervised learning models. We experiment five different pretraining methods, including pretraining on ImageNet 
                 and pretraining on remote sensing datasets, as shown in the table.
               </p>
+              <img src="assets/img/experiments.png" class="img-fluid" alt="" width="75%">
               <p>
                 For each pretraining method, we apply and evaluate its transfer learning performance on five downstream benchmark inference tasks 
                 in table. To this end, we developed a pipeline for applying pre-training models. 
               </p>
-              <img src="assets/img/pipeline.png" class="img-fluid" alt="">
+              <img src="assets/img/pipeline.png" class="img-fluid" alt="" width="75%">
               <p>
                 As shown in the figure, the experiment mainly consists of two steps. First, we use the ResNet50 backbone from each pretrained encoder 
                 to extract representations. Second, we attach a decoder to the ResNet50 backbone, either Unet for segmentation tasks or a fully 
