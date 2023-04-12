@@ -160,7 +160,7 @@ cons.min.css" rel="stylesheet">
             <span>Methods and Materials</span>
             <h2>Methods and Materials</h2>
           </div>
-          <div class="row">
+          <div>
             <p>
               Our work follows 5 stages:
             </p>
@@ -182,20 +182,31 @@ cons.min.css" rel="stylesheet">
               demonstrating the geospatial diversity of GeoNet. 
             </p>
           </div>
-          <div class="col-lg-3 col-md-6">
-            <img src="assets/img/method1_urban.png" class="img-fluid" alt="">
+          <div class="row">
+            <div class="col-lg-6 col-md-6">
+              <img src="assets/img/method1_urban.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <img src="assets/img/method1_rural.png" class="img-fluid" alt="">
+            </div>
+            <p class="fst-italic">
+              Method1 consists of urban sampling and rural sampling. For urban sampling, we first draw samples randomly from a 
+              Multivariate normal (MVN) distribution centered at city centers worldwide with probability weighted by log (population). 
+              We then draw a random sample coordinate from the corresponding MVN distribution located within a 50 km radius.
+              For rural sampling, we randomly sample locations with population densities between 5 and 250 people per km^2 in a 
+              30 X 30 arcsec (1 X 1 km at the equator approximately) resolution population density map.
+            </p>
           </div>
-          <div class="col-lg-3 col-md-6">
-            <img src="assets/img/method1_rural.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <img src="assets/img/method2_built.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <img src="assets/img/method3_landtype.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <img src="assets/img/method4_natural_disaster.png" class="img-fluid" alt="">
+          <div>
+            <div class="col-lg-3 col-md-6">
+              <img src="assets/img/method2_built.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <img src="assets/img/method3_landtype.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <img src="assets/img/method4_natural_disaster.png" class="img-fluid" alt="">
+            </div>
           </div>
         </div>
 
