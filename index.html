@@ -160,26 +160,61 @@ cons.min.css" rel="stylesheet">
             <span>Methods and Materials</span>
             <h2>Methods and Materials</h2>
           </div>
-          <div>
-            <p text-align="center">
-              Our work follows 5 stages:
+          <div  class="col-lg-12 col-md-12">
+            <p style="text-align:center">
+              Our work follows the below 5 stages:
             </p>
-            <img src="assets/img/5-stages.png" class="img-fluid" alt="" width="70%" height="auto" text-align="center">
+            <img src="assets/img/5-stages.png" class="img-fluid" alt="" width="70%" height="auto" style="text-align:center">
           </div>
           <div class="col-lg-6">
             <img src="assets/img/sample-distribution.png" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
-            <p class="fst-italic">
+            <p>
               <br /> 
               To create an immense dataset that captures geospatial, temporal, and semantic diversity, we select features 
               that cover diversity across geographies (all continents and countries), cities (all major cities are included), 
               rural regions (across all continents and countries), biomes (forests, deserts, tundra, etc.), areas impacted by 
               global change (floods, fires, storms, etc.), across 8 half-seasons.
             </p>
-            <p class="fst-italic">
+            <p>
               The graph on the left shows that we draw samples from different locations covering the entire globe except Antarctica, 
               demonstrating the geospatial diversity of GeoNet. 
+            </p>
+          </div>
+          <div class="row">
+            <p class="col-lg-4 col-md-6">
+              <strong>Method1</strong> consists of urban sampling and rural sampling. For urban sampling, we first draw samples randomly from a 
+              Multivariate normal (MVN) distribution centered at city centers worldwide with probability weighted by log (population). 
+              We then draw a random sample coordinate from the corresponding MVN distribution located within a 50 km radius.
+              For rural sampling, we randomly sample locations with population densities between 5 and 250 people per km^2 in a 
+              30 X 30 arcsec (1 X 1 km at the equator approximately) resolution population density map.
+            </p>
+            <div class="col-lg-4 col-md-6">
+              <img src="assets/img/method1_urban.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <img src="assets/img/method1_rural.png" class="img-fluid" alt="">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <img src="assets/img/method2_built.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <img src="assets/img/method3_landtype.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <img src="assets/img/method4_natural_disaster.png" class="img-fluid" alt="">
+            </div>
+            <p class="col-lg-3 col-md-6">
+              <strong>Method2</strong> includes all the coordinates of major human-built features that are associated with climate change, 
+              including airports, mining sites, power plants, ports, oil rigs, wind turbines, and dams.
+              <strong>Method3</strong> uses a stratified sampling approach to include images from 10 different land types, 
+              including artificial land, cropland, grassland, tree-covered areas etc.
+              <strong>Method4</strong> samples locations vulnerable to climate change-related natural disasters. For each category of natural disaster 
+              (wildfires, cyclones, droughts, and floods), we use a “proxy variable” as the probability in a weighted random sampling, 
+              which either quantifies the severity of the disaster or its occurrence frequency. 
             </p>
           </div>
         </div>
@@ -234,7 +269,33 @@ cons.min.css" rel="stylesheet">
             <div class="icon-box">
               <!-- <div class="icon"><i class="bx bxl-dribbble"></i></div> -->
               <h4><a href="#ssl">SSL</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <p>
+                Historical uses of remote sensing imagery for machine learning have primarily involved supervised learning: the use of labeled 
+                input data to train a model to perform classification tasks. This requires large, labeled remote sensing imagery datasets. Manually 
+                labeling these datasets is extremely time-consuming, requires expert knowledge, and must be repeated for each new dataset. (ImageNet, 
+                one of the largest and most widely used natural image recognition datasets with 14 million training images, required years of human 
+                labeling!) Furthermore, existing datasets of this nature are limited in geographic diversity, representing mainly Europe and America. 
+                Training machine learning models on data that covers only the Global North limits their transferability to other parts of the world.
+              </p>
+              <p>
+                Self-supervised learning (SSL) methods, which train a model to perform classification tasks without the need for labeled input data, 
+                address these limitations and remove the need for large, task-specific labeled datasets. Through pre-training on large, diverse, 
+                unlabeled datasets, self-supervised models learn to extract robust, highly transferable features that can then be applied to a wide 
+                range of other tasks and domains. This is highly useful for remote sensing applications. 
+              </p>
+              <p>
+                One popular SSL technique is contrastive learning, in which a model is trained to discriminate between positive examples (pairs of 
+                data that are similar in some way) and negative examples (pairs of data that are dissimilar). Many self-supervised learning models 
+                trained using contrastive learning have been shown to close the gap with and outperform supervised learning models. One popular SSL 
+                model trained using contrastive learning is SwAV (Swapping Assignments between Views), which eliminates the need for pairwise 
+                comparisons by using clustering-based methods that compare multiple views of the same image.
+              </p>
+              <p>
+                However, commonly used pretraining datasets for self-supervised image classification and object detection tasks, such as ImageNet, 
+                have limited application to remote sensing tasks because of satellite images’ unique characteristics. (Images taken by satellites 
+                capture observations from above, come in multi-spectral bands instead of RGB, and do not include a unique element). We are aware of 
+                no equivalent to ImageNet that is specifically intended for pre-training for use with satellite imagery data. 
+              </p>
             </div>
           </div>
 
@@ -697,11 +758,11 @@ cons.min.css" rel="stylesheet">
               <img src="assets/img/team/team-1.jpg" alt="">
               <h4>Julia Kourelakos</h4>
               <p>
-                Major
+                Computer Science
               </p>
               <div class="social">
-                <a href=""><i class="bi bi-github"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
+                <a href="https://github.com/juliakourela"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/jules-kourelakos-505476206/"><i class="bi bi-linkedin"></i></a>
               </div>
             </div>
           </div>
