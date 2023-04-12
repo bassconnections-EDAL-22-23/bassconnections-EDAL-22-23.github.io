@@ -187,14 +187,14 @@ cons.min.css" rel="stylesheet">
       </div>
     </section><!-- End Methods and Materials Section -->
 
-    <!-- ======= Benchmark Dataset Section ======= -->
+    <!-- ======= Benchmark Dataset Section ======= 
     <section id="dataset" class="about">
       <div class="container">
 
         <div class="row">
           <div class="section-title">
-            <span>Benchmark Dataset</span>
-            <h2>Benchmark Dataset</h2>
+            <span>b</span>
+            <h2>B</h2>
           </div>
           <div class="col-lg-6">
             <img src="assets/img/about.png" class="img-fluid" alt="">
@@ -217,7 +217,7 @@ cons.min.css" rel="stylesheet">
         </div>
 
       </div>
-    </section><!-- End Benchmark Dataset Section -->
+    </section> End Benchmark Dataset Section -->
 
     <!-- ======= Experiments Section ======= -->
     <section id="experiments" class="services section-bg">
@@ -250,7 +250,13 @@ cons.min.css" rel="stylesheet">
             <div class="icon-box">
               <!-- <div class="icon"><i class="bx bx-tachometer"></i></div> -->
               <h4><a href="#benchmarking">Benchmarking</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+              <p>
+                We assemble a list of accessible, well-studied, and highly representative benchmark datasets for two categories of downstream tasks: 
+                classification and semantic segmentation. From the list, we prioritized Sentinel-2 images with a wider geographical coverage and 
+                restricted the image resolution between 0.1 and 30 m/pixel. Preprocessing is conducted so that our benchmark images to all be of size 
+                224 x 224 pixels, aligning with the image size of the GeoEye dataset used for pretraining our model. We evaluate GeoNet on these datasets 
+                by comparing its performance  to the performance of fully-supervised models and other state-of-the-art SSL models.
+              </p>
             </div>
           </div>
 
@@ -258,7 +264,20 @@ cons.min.css" rel="stylesheet">
             <div class="icon-box">
               <!-- <div class="icon"><i class="bx bx-world"></i></div> -->
               <h4><a href="experiment_design">Experiment Design</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+              <p>
+                We aim to compare the impact of different pretraining paradigms on the transfer learning performance of self-supervised learning 
+                models and fully supervised learning models. We experiment five different pretraining methods, including pretraining on ImageNet 
+                and pretraining on remote sensing datasets, as shown in the table.
+              </p>
+              <p>
+                For each pretraining method, we apply and evaluate its transfer learning performance on five downstream benchmark inference tasks 
+                in table. To this end, we developed a pipeline for applying pre-training models. 
+              </p>
+              <p>
+                As shown in the figure, the experiment mainly consists of two steps. First, we use the ResNet50 backbone from each pretrained encoder 
+                to extract representations. Second, we attach a decoder to the ResNet50 backbone, either Unet for segmentation tasks or a fully 
+                connected linear layer for classification tasks, and fine-tune the decoder using the labels provided by the benchmark dataset.
+              </p>
             </div>
           </div>
 
@@ -719,7 +738,7 @@ cons.min.css" rel="stylesheet">
               <img src="assets/img/team/edna.png" alt="">
               <h4>Ruixin Zhang</h4>
               <p>
-                
+                Neuroscience & Computer Science, Minor in Cinematic Arts
               </p>
               <div class="social">
                 <a href=""><i class="bi bi-github"></i></a>
