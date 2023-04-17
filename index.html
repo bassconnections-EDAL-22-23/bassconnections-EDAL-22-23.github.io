@@ -353,11 +353,77 @@
             </div>
           </div>
 
-          <div id="geonet" class="col-lg-12 col-md-12">
-            <div class="icon-box">
+          <div id="geonet" class="about">
+            <div>
               <!-- <div class="icon"><i class="bx bx-file"></i></div> -->
               <h4><a href="#geonet">GeoNet Dataset</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+              <p><em>Scale</em>:&nbsp;
+                Data was collected from 7.2M unique 2.24km x 2.24km areas on all continents except Antarctica. Urban and rural areas comprise 60% of the 10 million images, 19% for natural disaster areas, 20% for land use and cover, and 1% for specific built environment features.</p><p><br></p>
+              <p><em>Temporal Collection</em>: Furthermore, GeoNet is temporally diverse as it involved extracting Sentinel-2 images from different time periods.</p>
+              
+  <p><em>Sampling Strategy with Spatial Sampling:</em></p>
+
+                  <p style="margin-left: 25px;">1. Population-based Sampling:</p>
+
+                      <p style="margin-left: 50px;">Using population data, samples are generated in urban and rural regions.</p>
+
+    <p>To mimic population distribution in urban regions, samples are drawn randomly from a Multivariate normal (MVN) distribution centered at city centers worldwide with probability weighted by log (population)</p>
+
+  <p>For rural areas, locations are randomly sampled with population densities between five and 250 people per km^2 in a 30X30 arcsec (1 X 1 km at the equator approximately) resolution population density map</p>
+
+<p>2. Targeted Built Features:</p>
+
+<p>Seven categories of human-built features associated with climate change globally are identified using various datasets.</p>
+
+<p>This search resulted in around 82,000 coordinates.</p>
+
+<p>3. Stratified Sampling by Land Cover Types:</p>
+
+<p>A fixed amount of coordinates is included for 11 land cover types:</p>
+
+<p>Artificial land</p>
+
+<p>Cropland</p>
+
+<p>Grassland</p>
+
+<p>Tree-covered areas</p>
+
+<p>Shrubs-covered areas</p>
+
+<p>Herbaceous vegetation that is aquatic or regularly flooded</p>
+
+<p>Mangroves</p>
+
+<p>Sparse vegetation</p>
+
+<p>Bare soil</p>
+
+<p>Snow and glaciers</p>
+
+<p>Water bodies</p>
+
+<p>4. Locations Vulnerable to Natural Disasters are Included:</p>
+
+<p>Wildfires</p>
+
+<p>Cyclones</p>
+
+<p>Droughts</p>
+
+<p>Floods</p>
+
+<p>Sampling Strategy with a Grid-Based Approach:</p>
+
+<p>Key Aim: To avoid duplications and overlaps in extracted images</p>
+
+<p>A 2.24x2.24 km grid is defined to match the image size for SwAV&rsquo;s input dimensions (224x224) and the resolution of Sentinel-2 images (10 m). Mapping coordinates into a discrete grid allows for the removal of nearby locations with overlapping scenes.</p>
+
+<p>Coordinated used to extract Sentinel-2 images are collected with various considerations:</p>
+
+<p>1. 10 million samples are generated using all four sampling methods after which the corresponding grid cells that contain these coordinates are determined. Images from oversampled grid cells are deleted by limited the number of images per grid cell to 4.</p>
+
+<p>2. If a grid cell is sampled more than once, its corresponding images from different search periods are extracted enabling seasonal temporal diversity and reducing redundancy of the view.</p>
             </div>
           </div>
 
