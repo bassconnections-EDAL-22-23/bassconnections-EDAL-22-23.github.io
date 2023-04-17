@@ -367,63 +367,80 @@
 
                       <p style="margin-left: 50px;">Using population data, samples are generated in urban and rural regions.</p>
 
-    <p>To mimic population distribution in urban regions, samples are drawn randomly from a Multivariate normal (MVN) distribution centered at city centers worldwide with probability weighted by log (population)</p>
+    <p style="margin-left: 50px;">To mimic population distribution in urban regions, samples are drawn randomly from a Multivariate normal (MVN) distribution centered at city centers worldwide with probability weighted by log (population)</p>
 
-  <p>For rural areas, locations are randomly sampled with population densities between five and 250 people per km^2 in a 30X30 arcsec (1 X 1 km at the equator approximately) resolution population density map</p>
+  <p style="margin-left: 50px;">For rural areas, locations are randomly sampled with population densities between five and 250 people per km^2 in a 30X30 arcsec (1 X 1 km at the equator approximately) resolution population density map</p>
 
-<p>2. Targeted Built Features:</p>
+<p style="margin-left: 25px;">2. Targeted Built Features:</p>
 
-<p>Seven categories of human-built features associated with climate change globally are identified using various datasets.</p>
+<p style="margin-left: 50px;">Seven categories of human-built features associated with climate change globally are identified using various datasets resulting in around 82,000 coordinates.</p>
 
-<p>This search resulted in around 82,000 coordinates.</p>
 
-<p>3. Stratified Sampling by Land Cover Types:</p>
+<p style="margin-left: 25px;">3. Stratified Sampling by Land Cover Types:</p>
 
-<p>A fixed amount of coordinates is included for 11 land cover types:</p>
-
+<p style="margin-left: 50px;">A fixed amount of coordinates are included for 11 land cover types:</p>
+<ul style="margin-left: 50px;">
+<li>
 <p>Artificial land</p>
-
+</li>
+<li>
 <p>Cropland</p>
-
+</li>
+<li>
 <p>Grassland</p>
-
+</li>
+<li>
 <p>Tree-covered areas</p>
-
+</li>
+<li>
 <p>Shrubs-covered areas</p>
-
+</li>
+<li>
 <p>Herbaceous vegetation that is aquatic or regularly flooded</p>
-
+</li>
+<li>
 <p>Mangroves</p>
-
+</li>
+<li>
 <p>Sparse vegetation</p>
-
+</li>
+<li>
 <p>Bare soil</p>
-
+</li>
+<li>
 <p>Snow and glaciers</p>
-
+</li>
+<li>
 <p>Water bodies</p>
+</li>
+</ul>
 
-<p>4. Locations Vulnerable to Natural Disasters are Included:</p>
-
+<p style="margin-left: 25px;">4. Locations Vulnerable to Natural Disasters are Included:</p>
+<ul style="margin-left: 50px">
+<li>
 <p>Wildfires</p>
-
+</li>
+<li>
 <p>Cyclones</p>
-
+</li>
+<li>
 <p>Droughts</p>
-
+</li>
+<li>
 <p>Floods</p>
+</li>
+</ul>
+<p><em>Sampling Strategy with a Grid-Based Approach:</em></p>
 
-<p>Sampling Strategy with a Grid-Based Approach:</p>
+<p style="margin-left: 25px;">Key Aim: To avoid duplications and overlaps in extracted images</p>
 
-<p>Key Aim: To avoid duplications and overlaps in extracted images</p>
+<p style="margin-left: 25px;">A 2.24x2.24 km grid is defined to match the image size for SwAV&rsquo;s input dimensions (224x224) and the resolution of Sentinel-2 images (10 m). Mapping coordinates into a discrete grid allows for the removal of nearby locations with overlapping scenes.</p>
 
-<p>A 2.24x2.24 km grid is defined to match the image size for SwAV&rsquo;s input dimensions (224x224) and the resolution of Sentinel-2 images (10 m). Mapping coordinates into a discrete grid allows for the removal of nearby locations with overlapping scenes.</p>
+<p style="margin-left: 25px;">Coordinated used to extract Sentinel-2 images are collected with various considerations:</p>
 
-<p>Coordinated used to extract Sentinel-2 images are collected with various considerations:</p>
+<p style="margin-left: 50px;">1. 10 million samples are generated using all four sampling methods after which the corresponding grid cells that contain these coordinates are determined. Images from oversampled grid cells are deleted by limited the number of images per grid cell to 4.</p>
 
-<p>1. 10 million samples are generated using all four sampling methods after which the corresponding grid cells that contain these coordinates are determined. Images from oversampled grid cells are deleted by limited the number of images per grid cell to 4.</p>
-
-<p>2. If a grid cell is sampled more than once, its corresponding images from different search periods are extracted enabling seasonal temporal diversity and reducing redundancy of the view.</p>
+<p style="margin-left: 50px;">2. If a grid cell is sampled more than once, its corresponding images from different search periods are extracted enabling seasonal temporal diversity and reducing redundancy of the view.</p>
             </div>
           </div>
 
