@@ -49,8 +49,6 @@
           <li><a class="nav-link scrollto" href="#motivation">Motivation</a></li>
           <li><a class="nav-link scrollto" href="#contributions">Contributions</a></li>
           <li><a class="nav-link scrollto" href="#methods">Methods and Materials</a></li>
-          <li><a class="nav-link scrollto " href="#dataset">Benchmark Dataset</a></li>
-          <!-- <li><a class="nav-link scrollto" href="#experiments">Experiments</a></li> -->
           <li class="dropdown"><a href="#experiments"><span>Experiments</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#ssl">SSL</a></li>
@@ -80,7 +78,7 @@
           <h1>Bass Connections 2022-2023</h1>
           <h2>Tracking Climate Change With Satellites and Artificial Intelligence</h2>
           <h3>Margaret Brooks, Francesca Chiappetta, Alex Desbans, Neel Gajjar, Julia Kourelakos, Saad Lahrichi, Vaishvi
-            Patel, Edna Zhang, Ruohan Zhang, Shufan Xia</h3>
+            Patel, Ruixin Zhang, Ruohan Zhang, Shufan Xia</h3>
           <div class="d-flex">
             <a href="https://github.com/energydatalab/BassConnections22-23" class="btn-get-started scrollto">Our
               Github</a>
@@ -379,7 +377,8 @@
                 by comparing its performance to the performance of fully-supervised models and other state-of-the-art
                 SSL models.
               </p>
-              <img src="assets/img/benchmark_datasets.png" class="img-fluid" alt="">
+              <br/>
+              <img src="assets/img/benchmark_datasets.png" class="img-fluid" alt="" width="90%">
             </div>
           </div>
 
@@ -394,13 +393,17 @@
                 pretraining on ImageNet
                 and pretraining on remote sensing datasets, as shown in the table.
               </p>
-              <img src="assets/img/experiments.png" class="img-fluid" alt="" width="60%">
+              <br/>
+              <img src="assets/img/experiments.png" class="img-fluid" alt="" width="55%">
+              <br/>
               <p>
                 For each pretraining method, we apply and evaluate its transfer learning performance on five downstream
                 benchmark inference tasks
                 in table. To this end, we developed a pipeline for applying pre-training models.
               </p>
+              <br/>
               <img src="assets/img/pipeline.png" class="img-fluid" alt="" width="75%">
+              <br/>
               <p>
                 As shown in the figure, the experiment mainly consists of two steps. First, we use the ResNet50 backbone
                 from each pretrained encoder
@@ -409,6 +412,8 @@
                 connected linear layer for classification tasks, and fine-tune the decoder using the labels provided by
                 the benchmark dataset.
               </p>
+              <br/>
+              <img src="assets/img/metrics.png" class="img-fluid" alt="" width="50%">
             </div>
           </div>
 
@@ -427,27 +432,76 @@
             <span>Results</span>
             <h2>Results</h2>
           </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content">
+            <p>
+              We identified which methods perform better across training size. SwAV-3M appears to outperform other pre-training methods 
+              for the SEN12MS dataset, which has weak labels. For Big Earth Net, both SwAV 3M and SwAV Imagenet perform well in multilabel 
+              classification tasks, with SwAV 3M performing the best with a larger training size. For Deep Globe, SwAV-3M, SwAV Imagenet, 
+              and supervised Imagenet all performed well, with supervised imagenet performing best for a lower training size and SwAV imagenet 
+              performing best for a larger training size. SeCo performed noticeably worse, and MoCoV2_fMoW produced by far the lowest IOU results. 
+              For Sustain Bench, SwAV 3M and SwAV Imagenet outperform other pre-training methods when the training size is small, while 
+              increasing the training size, all models except SeCo perform similarly. For EuroSat, SwAV image net performs the best, and 
+              unfortunately SwAV 3M does not perform better than supervised.
+            </p>
+          </div>
           <div class="col-lg-6">
-            <img src="assets/img/about.png" class="img-fluid" alt="">
+            <img src="assets/img/128.png" class="img-fluid" alt="">
+            <p>
+              Table 1: Accuracy methods across datasets assuming a consistent  training size = 128
+            </p>
+            <img src="assets/img/1024.png" class="img-fluid" alt="">
+            <p>
+              Table 2:  Rank of methods across datasets assuming a consistent  training size = 1024
+            </p>
+          </div>
+          <br/>
+          <p>
+            The results of our experiments are summarized below. For each benchmark task, we plot the accuracy measurement at different training 
+            size used in fine-tuning, showing each pretraining method with each separate line.
+          </p>
+          <br/>
+          <div class="col-lg-6 pt-4 pt-lg-0 content">
+            <center><p>SEN12MS</p></center>
+            <p>plot</p>
+            <p>
+              SwAV-3M consistently outperformed SeCo, mocoV2 trained on fMoW, supervised trained on imagenet, and SwAV trained on image net on the 
+              SEN12MS dataset. SEN12MS is a weakly-labeled semantic segmentation dataset, therefore all the pre-training methods are limited, 
+              hence the low IoU values. The IoU score for pre-training methods increases significantly as training size increases from 64 to 1024 
+              images. The results also show that self-supervision can outperform supervised on this weak label segmentation task, except for SeCo. 
+            </p>
+          </div>
+          <div class="col-lg-6">
+            <center><p>BIG EARTH NET</p></center>
+            <p>plot</p>
+            <p>
+              SwAV-3M is comparable with SwAV trained on imagenet for this multilabel classification task,  at an f-1 score between 0.6 and 0.7. 
+              SwAV-3M and SwAV trained on imagenet increase in F-1 score as training size increases more when compared to other pretraining methods.
+            </p>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
-              <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                irure dolor in reprehenderit in voluptate trideta storacalaperda</li>
-            </ul>
+            <center><p>Sustain Bench</p></center>
+            <p>plot</p>
             <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-              voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur.
+              Swav 3M and swav imageNet outperform other pretraining methods when the training size is small (64, 128, 256 and 512). However as the 
+              training size increases to 1024, the marginal benefit from swav pretraining compared to other methods decreases. Pretraining SWAV on 
+              3M sentinel-2 images has a small improvement from Imagnet pretraining. Overall, the best IoU score for pretraing with SWaV on both our 
+              dataset and imagenet are comparable to those in Calhoun et al. (2022) at around 0.44.
             </p>
           </div>
+          <div class="col-lg-6">
+            <center><p>EuroSat</p></center>
+            <p>plot</p>
+            <p>
+              MoCoV2, swav_imagenet, and supervised_imagenet all performed better than SwAV-3M. SeCo performed noticeably worse than the other tasks.
+            </p>
+          </div>
+          <center><p>Deep Globe</p></center>
+          <p>plot</p>
+          <center><p>
+            Swav_3M, swav_imagenet, and supervised_imagenet all performed the best with IOU values comparable to those in the Deep Globe paper. SeCo 
+            performed noticeably worse and MoCoV2_fMoW produced by far the lowest IOU results. Multiple reruns of MoCoV2 did not result in any 
+            improvements in IOU score. 
+          </p></center>
         </div>
 
       </div>
