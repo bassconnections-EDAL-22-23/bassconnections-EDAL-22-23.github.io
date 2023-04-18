@@ -565,8 +565,10 @@
               </div>
             </div>
             <p>
-              SwAV-3M is comparable with SwAV trained on imagenet for this multilabel classification task,  at an f-1 score between 0.6 and 0.7. 
-              SwAV-3M and SwAV trained on imagenet increase in F-1 score as training size increases more when compared to other pretraining methods.
+              SwAV-3M, SwAV trained on ImageNet, and mocoV2 trained on fMoW outperformed the other 2 models, for this multilabel classification task, 
+              at a top-1 precision score between 0.65 and 0.7. SwAV-3M performed slightly better than SwAV trained on ImageNet and mocoV2 trained on 
+              fMoW for smaller training sizes (64, 256, and 512). The improvement in performance gradually decreases with larger training sizes across 
+              the 5 different approaches. 
             </p>
             <div class="spacer"></div>
           </div>
