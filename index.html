@@ -48,13 +48,12 @@
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#motivation">Motivation</a></li>
           <li><a class="nav-link scrollto" href="#contributions">Contributions</a></li>
-          <li><a class="nav-link scrollto" href="#methods">Methods and Materials</a></li>
+          <li><a class="nav-link scrollto" href="#ssl">Self-supervised learning</a></li>
+          <li><a class="nav-link scrollto" href="#geonet">GeoNet dataset</a></li>
           <li class="dropdown"><a href="#experiments"><span>Experiments</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#ssl">SSL</a></li>
-              <li><a href="#geonet">GeoNet Dataset</a></li>
-              <li><a href="#benchmarking">Benchmarking</a></li>
               <li><a href="#experiment_design">Experiment design</a></li>
+              <li><a href="#benchmarking">Benchmarking</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#results">Results</a></li>
@@ -358,23 +357,31 @@
               <!-- <div class="icon"><i class="bx bx-file"></i></div> -->
               <h4><a href="#geonet">GeoNet Dataset</a></h4>
               <p><em>Scale</em>:&nbsp;
-                Data was collected from 7.2M unique 2.24km x 2.24km areas on all continents except Antarctica. Urban and rural areas comprise 60% of the 10 million images, 19% for natural disaster areas, 20% for land use and cover, and 1% for specific built environment features.</p>
+                Data was collected from 7.2M unique 2.24km x 2.24km areas on all continents except Antarctica. Urban and
+                rural areas comprise 60% of the 10 million images, 19% for natural disaster areas, 20% for land use and
+                cover, and 1% for specific built environment features.</p>
               <p><br></p>
-              <p><em>Temporal Collection</em>: Furthermore, GeoNet is temporally diverse as it involved extracting Sentinel-2 images from different time periods.</p>
-              
+              <p><em>Temporal Collection</em>: Furthermore, GeoNet is temporally diverse as it involved extracting
+                Sentinel-2 images from different time periods.</p>
+
               <p><em>Sampling Strategy with Spatial Sampling:</em></p>
 
               <p style="margin-left: 25px;">1. Population-based Sampling:</p>
 
               <p style="margin-left: 50px;">Using population data, samples are generated in urban and rural regions.</p>
 
-              <p style="margin-left: 50px;">To mimic population distribution in urban regions, samples are drawn randomly from a Multivariate normal (MVN) distribution centered at city centers worldwide with probability weighted by log (population)</p>
+              <p style="margin-left: 50px;">To mimic population distribution in urban regions, samples are drawn
+                randomly from a Multivariate normal (MVN) distribution centered at city centers worldwide with
+                probability weighted by log (population)</p>
 
-              <p style="margin-left: 50px;">For rural areas, locations are randomly sampled with population densities between five and 250 people per km^2 in a 30X30 arcsec (1 X 1 km at the equator approximately) resolution population density map</p>
+              <p style="margin-left: 50px;">For rural areas, locations are randomly sampled with population densities
+                between five and 250 people per km^2 in a 30X30 arcsec (1 X 1 km at the equator approximately)
+                resolution population density map</p>
 
               <p style="margin-left: 25px;">2. Targeted Built Features:</p>
 
-              <p style="margin-left: 50px;">Seven categories of human-built features associated with climate change globally are identified using various datasets resulting in around 82,000 coordinates.</p>
+              <p style="margin-left: 50px;">Seven categories of human-built features associated with climate change
+                globally are identified using various datasets resulting in around 82,000 coordinates.</p>
 
 
               <p style="margin-left: 25px;">3. Stratified Sampling by Land Cover Types:</p>
@@ -435,13 +442,20 @@
 
               <p style="margin-left: 25px;">Key Aim: To avoid duplications and overlaps in extracted images</p>
 
-              <p style="margin-left: 25px;">A 2.24x2.24 km grid is defined to match the image size for SwAV&rsquo;s input dimensions (224x224) and the resolution of Sentinel-2 images (10 m). Mapping coordinates into a discrete grid allows for the removal of nearby locations with overlapping scenes.</p>
+              <p style="margin-left: 25px;">A 2.24x2.24 km grid is defined to match the image size for SwAV&rsquo;s
+                input dimensions (224x224) and the resolution of Sentinel-2 images (10 m). Mapping coordinates into a
+                discrete grid allows for the removal of nearby locations with overlapping scenes.</p>
 
-              <p style="margin-left: 25px;">Coordinated used to extract Sentinel-2 images are collected with various considerations:</p>
+              <p style="margin-left: 25px;">Coordinated used to extract Sentinel-2 images are collected with various
+                considerations:</p>
 
-              <p style="margin-left: 50px;">1. 10 million samples are generated using all four sampling methods after which the corresponding grid cells that contain these coordinates are determined. Images from oversampled grid cells are deleted by limited the number of images per grid cell to 4.</p>
+              <p style="margin-left: 50px;">1. 10 million samples are generated using all four sampling methods after
+                which the corresponding grid cells that contain these coordinates are determined. Images from
+                oversampled grid cells are deleted by limited the number of images per grid cell to 4.</p>
 
-              <p style="margin-left: 50px;">2. If a grid cell is sampled more than once, its corresponding images from different search periods are extracted enabling seasonal temporal diversity and reducing redundancy of the view.</p>
+              <p style="margin-left: 50px;">2. If a grid cell is sampled more than once, its corresponding images from
+                different search periods are extracted enabling seasonal temporal diversity and reducing redundancy of
+                the view.</p>
             </div>
           </div>
 
@@ -461,7 +475,7 @@
                 by comparing its performance to the performance of fully-supervised models and other state-of-the-art
                 SSL models.
               </p>
-              <br/>
+              <br />
               <img src="assets/img/benchmark_datasets.png" class="img-fluid" alt="" width="90%">
             </div>
           </div>
@@ -477,17 +491,17 @@
                 pretraining on ImageNet
                 and pretraining on remote sensing datasets, as shown in the table.
               </p>
-              <br/>
+              <br />
               <img src="assets/img/experiments.png" class="img-fluid" alt="" width="55%">
-              <br/>
+              <br />
               <p>
                 For each pretraining method, we apply and evaluate its transfer learning performance on five downstream
                 benchmark inference tasks
                 in table. To this end, we developed a pipeline for applying pre-training models.
               </p>
-              <br/>
+              <br />
               <img src="assets/img/pipeline.png" class="img-fluid" alt="" width="75%">
-              <br/>
+              <br />
               <p>
                 As shown in the figure, the experiment mainly consists of two steps. First, we use the ResNet50 backbone
                 from each pretrained encoder
@@ -496,7 +510,7 @@
                 connected linear layer for classification tasks, and fine-tune the decoder using the labels provided by
                 the benchmark dataset.
               </p>
-              <br/>
+              <br />
               <img src="assets/img/metrics.png" class="img-fluid" alt="" width="50%">
             </div>
           </div>
@@ -518,17 +532,25 @@
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
             <p>
-              We identified which methods perform better across training size. SwAV-3M appears to outperform other pre-training methods 
-              for the SEN12MS dataset, which has weak labels. For Big Earth Net, both SwAV 3M and SwAV Imagenet perform well in multilabel 
-              classification tasks, with SwAV 3M performing the best with a larger training size. For Deep Globe, SwAV-3M, SwAV Imagenet, 
-              and supervised Imagenet all performed well, with supervised imagenet performing best for a lower training size and SwAV imagenet 
-              performing best for a larger training size. SeCo performed noticeably worse, and MoCoV2_fMoW produced by far the lowest IOU results. 
-              For Sustain Bench, SwAV 3M and SwAV Imagenet outperform other pre-training methods when the training size is small, while 
-              increasing the training size, all models except SeCo perform similarly. For EuroSat, SwAV image net performs the best, and 
+              We identified which methods perform better across training size. SwAV-3M appears to outperform other
+              pre-training methods
+              for the SEN12MS dataset, which has weak labels. For Big Earth Net, both SwAV 3M and SwAV Imagenet perform
+              well in multilabel
+              classification tasks, with SwAV 3M performing the best with a larger training size. For Deep Globe,
+              SwAV-3M, SwAV Imagenet,
+              and supervised Imagenet all performed well, with supervised imagenet performing best for a lower training
+              size and SwAV imagenet
+              performing best for a larger training size. SeCo performed noticeably worse, and MoCoV2_fMoW produced by
+              far the lowest IOU results.
+              For Sustain Bench, SwAV 3M and SwAV Imagenet outperform other pre-training methods when the training size
+              is small, while
+              increasing the training size, all models except SeCo perform similarly. For EuroSat, SwAV image net
+              performs the best, and
               unfortunately SwAV 3M does not perform better than supervised.
             </p>
             <p>
-              The results of our experiments are summarized below. For each benchmark task, we plot the accuracy measurement at different training 
+              The results of our experiments are summarized below. For each benchmark task, we plot the accuracy
+              measurement at different training
               size used in fine-tuning, showing each pretraining method with each separate line.
             </p>
           </div>
@@ -547,10 +569,14 @@
               </div>
             </div>
             <p>
-              SwAV-3M consistently outperformed SeCo, mocoV2 trained on fMoW, supervised trained on imagenet, and SwAV trained on image net on the 
-              SEN12MS dataset. SEN12MS is a weakly-labeled semantic segmentation dataset, therefore all the pre-training methods are limited, 
-              hence the low IoU values. The IoU score for pre-training methods increases significantly as training size increases from 64 to 1024 
-              images. The results also show that self-supervision can outperform supervised on this weak label segmentation task, except for SeCo. 
+              SwAV-3M consistently outperformed SeCo, mocoV2 trained on fMoW, supervised trained on imagenet, and SwAV
+              trained on image net on the
+              SEN12MS dataset. SEN12MS is a weakly-labeled semantic segmentation dataset, therefore all the pre-training
+              methods are limited,
+              hence the low IoU values. The IoU score for pre-training methods increases significantly as training size
+              increases from 64 to 1024
+              images. The results also show that self-supervision can outperform supervised on this weak label
+              segmentation task, except for SeCo.
             </p>
             <div class="spacer"></div>
           </div>
@@ -565,10 +591,13 @@
               </div>
             </div>
             <p>
-              SwAV-3M, SwAV trained on ImageNet, and mocoV2 trained on fMoW outperformed the other 2 models, for this multilabel classification task, 
-              at a top-1 precision score between 0.65 and 0.7. SwAV-3M performed slightly better than SwAV trained on ImageNet and mocoV2 trained on 
-              fMoW for smaller training sizes (64, 256, and 512). The improvement in performance gradually decreases with larger training sizes across 
-              the 5 different approaches. 
+              SwAV-3M, SwAV trained on ImageNet, and mocoV2 trained on fMoW outperformed the other 2 models, for this
+              multilabel classification task,
+              at a top-1 precision score between 0.65 and 0.7. SwAV-3M performed slightly better than SwAV trained on
+              ImageNet and mocoV2 trained on
+              fMoW for smaller training sizes (64, 256, and 512). The improvement in performance gradually decreases
+              with larger training sizes across
+              the 5 different approaches.
             </p>
             <div class="spacer"></div>
           </div>
@@ -583,9 +612,12 @@
               </div>
             </div>
             <p>
-              Swav 3M and swav imageNet outperform other pretraining methods when the training size is small (64, 128, 256 and 512). However as the 
-              training size increases to 1024, the marginal benefit from swav pretraining compared to other methods decreases. Pretraining SWAV on 
-              3M sentinel-2 images has a small improvement from Imagnet pretraining. Overall, the best IoU score for pretraing with SWaV on both our 
+              Swav 3M and swav imageNet outperform other pretraining methods when the training size is small (64, 128,
+              256 and 512). However as the
+              training size increases to 1024, the marginal benefit from swav pretraining compared to other methods
+              decreases. Pretraining SWAV on
+              3M sentinel-2 images has a small improvement from Imagnet pretraining. Overall, the best IoU score for
+              pretraing with SWaV on both our
               dataset and imagenet are comparable to those in Calhoun et al. (2022) at around 0.44.
             </p>
             <div class="spacer"></div>
@@ -601,7 +633,8 @@
               </div>
             </div>
             <p>
-              MoCoV2, swav_imagenet, and supervised_imagenet all performed better than SwAV-3M. SeCo performed noticeably worse than the other tasks.
+              MoCoV2, swav_imagenet, and supervised_imagenet all performed better than SwAV-3M. SeCo performed
+              noticeably worse than the other tasks.
             </p>
             <div class="spacer"></div>
           </div>
@@ -616,9 +649,11 @@
               </div>
             </div>
             <p>
-              Swav_3M, swav_imagenet, and supervised_imagenet all performed the best with IOU values comparable to those in the Deep Globe paper. SeCo 
-              performed noticeably worse and MoCoV2_fMoW produced by far the lowest IOU results. Multiple reruns of MoCoV2 did not result in any 
-              improvements in IOU score. 
+              Swav_3M, swav_imagenet, and supervised_imagenet all performed the best with IOU values comparable to those
+              in the Deep Globe paper. SeCo
+              performed noticeably worse and MoCoV2_fMoW produced by far the lowest IOU results. Multiple reruns of
+              MoCoV2 did not result in any
+              improvements in IOU score.
             </p>
             <div class="spacer"></div>
           </div>
@@ -678,10 +713,23 @@
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
             <p>
-              Future steps in further evaluating the performance of our encoder on GeoNet could include the use of more benchmark datasets, expansion to higher resolution and addition of weak labels. Testing our encoder against benchmark datasets will more extensively show the diverse potential of its applications. Currently our dataset consists of images of resolution 10 m per pixel. We can further expand our testing on benchmark tasks which are higher in resolution and also expand the dataset to be higher resolution to see how our GeoNet self-supervised encoder performs on those tasks. 
+              Future steps in further evaluating the performance of our encoder on GeoNet could include the use of more
+              benchmark datasets, expansion to higher resolution and addition of weak labels. Testing our encoder
+              against benchmark datasets will more extensively show the diverse potential of its applications. Currently
+              our dataset consists of images of resolution 10 m per pixel. We can further expand our testing on
+              benchmark tasks which are higher in resolution and also expand the dataset to be higher resolution to see
+              how our GeoNet self-supervised encoder performs on those tasks.
             </p>
             <p>
-              Our second hypothesis is that a natural language processing (NLP) encoder enables mappings between textual annotation and satellite images, allowing customized queries of climate data. The textual data has already been gathered and the self supervised encoder has been trained. As our next step, we want to create a natural language processing model to extract text features from the text data collected so we can support a variety of questions. Then combine those text features from the natural language encoder and the image features from our self supervised encoder from before training using the geographic data and related weak labels to both. After this combination the previously unlabeled images will now have text features. This could be presented using a basic web application that allows text searches from users and presents the related images!! 
+              Our second hypothesis is that a natural language processing (NLP) encoder enables mappings between textual
+              annotation and satellite images, allowing customized queries of climate data. The textual data has already
+              been gathered and the self supervised encoder has been trained. As our next step, we want to create a
+              natural language processing model to extract text features from the text data collected so we can support
+              a variety of questions. Then combine those text features from the natural language encoder and the image
+              features from our self supervised encoder from before training using the geographic data and related weak
+              labels to both. After this combination the previously unlabeled images will now have text features. This
+              could be presented using a basic web application that allows text searches from users and presents the
+              related images!!
 
             </p>
           </div>
@@ -1229,11 +1277,12 @@
         <div class="row justify-content-center">
           <div class="col-lg-12 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column align-items-center">
             <div class="d-flex">
-              <a href="https://github.com/energydatalab/BassConnections22-23" class="btn-get-started"> Github <i class="bi bi-github"></i> </a>
+              <a href="https://github.com/energydatalab/BassConnections22-23" class="btn-get-started"> Github <i
+                  class="bi bi-github"></i> </a>
             </div>
           </div>
         </div>
-        
+
 
       </div>
     </div>
