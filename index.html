@@ -154,9 +154,9 @@
             <div class="icon-box">
               <div class="icon"><i class="bi bi-graph-up"></i></div>
               <h4 class="title"><a href="#contributions">Test different training paradigms of SwAV on GeoNet</a></h4>
-              <p class="description">Testing different training paradigms of SwAV on GeoNet to find that the use of
-                GeoNet leads to state-of-the-art performance on six downstream recognition tasks in overhead imagery,
-                especially in few-shot learning scenarios.</p>
+              <p class="description">We test different training paradigms of SwAV on GeoNet to find that GeoNet
+                outperforms state-of-the-art models in three out of five downstream recognition tasks and is
+                competitive with other SSL models </p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
@@ -171,7 +171,67 @@
         </div>
 
       </div>
-    </section><!-- End Key Contributions Section -->
+    </section>
+    <!-- End Key Contributions Section -->
+
+    <!-- ======= SSL Section ======= -->
+    <section id="ssl" class="services section-bg">
+      <div class="container">
+        <div class="row">
+          <div class="section-title">
+            <span><a href="#ssl"></a>Self-supervised learning</span>
+            <h2>Self-supervised learning</h2>
+          </div>
+          <div class="col-lg-12 col-md-12">
+            <p style="text-align:center">
+              Historical uses of remote sensing imagery for machine learning have primarily involved supervised
+              learning: the use of labeled
+              input data to train a model to perform classification tasks. This requires large, labeled remote sensing
+              imagery datasets. Manually
+              labeling these datasets is extremely time-consuming, requires expert knowledge, and must be repeated for
+              each new dataset. (ImageNet,
+              one of the largest and most widely used natural image recognition datasets with 14 million training
+              images, required years of human
+              labeling!) Furthermore, existing datasets of this nature are limited in geographic diversity,
+              representing mainly Europe and America.
+              Training machine learning models on data that covers only the Global North limits their transferability
+              to other parts of the world.
+            </p>
+            <p style="text-align:center">
+              Self-supervised learning (SSL) methods, which train a model to perform classification tasks without the
+              need for labeled input data,
+              address these limitations and remove the need for large, task-specific labeled datasets. Through
+              pre-training on large, diverse,
+              unlabeled datasets, self-supervised models learn to extract robust, highly transferable features that
+              can then be applied to a wide
+              range of other tasks and domains. This is highly useful for remote sensing applications.
+            </p>
+            <p style="text-align:center">
+              One popular SSL technique is contrastive learning, in which a model is trained to discriminate between
+              positive examples (pairs of
+              data that are similar in some way) and negative examples (pairs of data that are dissimilar). Many
+              self-supervised learning models
+              trained using contrastive learning have been shown to close the gap with and outperform supervised
+              learning models. One popular SSL
+              model trained using contrastive learning is SwAV (Swapping Assignments between Views), which eliminates
+              the need for pairwise
+              comparisons by using clustering-based methods that compare multiple views of the same image.
+            </p>
+            <p style="text-align:center">
+              However, commonly used pretraining datasets for self-supervised image classification and object
+              detection tasks, such as ImageNet,
+              have limited application to remote sensing tasks because of satellite images’ unique characteristics.
+              (Images taken by satellites
+              capture observations from above, come in multi-spectral bands instead of RGB, and do not include a
+              unique element). We are aware of
+              no equivalent to ImageNet that is specifically intended for pre-training for use with satellite imagery
+              data.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End SSL Section ======= -->
 
     <!-- ======= Methods and Materials Section ======= -->
     <section id="methods" class="about">
@@ -297,7 +357,6 @@
         <div class="section-title">
           <span>Experiments</span>
           <h2>Experiments</h2>
-          <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
         </div>
 
         <div class="row">
