@@ -296,14 +296,14 @@
           </div>
           <div class="row">
             <h4>Method 3: Land Type</h4>
-            <img src="assets/img/method3_landtype.png" class="img-fluid half-screen" alt="">
+            <img src="assets/img/method3_landtype.png" class="img-fluid half-screen" alt="" width="80%">
             <caption>The third method uses a stratified sampling approach to include a fixed amount of images are included for 11 land cover types: Artificial land, Cropland, Grassland, Tree-covered areas, Shrubs-covered areas, Herbaceous vegetation that is aquatic or regularly flooded, Mangroves, Sparse vegetation, Bare soil, Snow and glaciers, Water bodies.
             </caption>
             <div class="spacer"></div>
           </div>
           <div class="row">
             <h4>Method 4: Natural Disasters</h4>
-            <img src="assets/img/method4_natural_disaster.png" class="img-fluid half-screen" alt="">
+            <img src="assets/img/method4_natural_disaster.png" class="img-fluid half-screen" alt="" width="80%">
             <caption>The fourth and final method samples locations vulnerable to climate change-related natural disasters. For each of the four categories of natural disaster (wildfires, cyclones, droughts, and floods), we use a “proxy variable” as the probability in a weighted random sampling, which either quantifies the severity of the disaster or its occurrence frequency.</caption>
             <div class="spacer"></div>
           </div>
@@ -350,24 +350,20 @@
               <h4><a href="#experiment_design">Experiment Design</a></h4>
               <p>
                 We aim to compare the impact of different pretraining paradigms on the transfer learning performance of
-                self-supervised learning
-                models and fully supervised learning models. We experiment five different pretraining methods, including
-                pretraining on ImageNet
-                and pretraining on remote sensing datasets, as shown in the table.
+                self-supervised learning models and fully supervised learning models. We look at the difference between 
+                pretraining on ImageNet, which is used in most fields, and pretraining on a remote sensing dataset. 
+                We hypothesize the latter would lead to better representations, given that remote sensing data is distinct 
+                from other types of data. We also compare the performance of our model GeoEye to that of MoCo-v2-fMoW and SeCo, 
+                two state-of-the-art SSL models trained on satellite imagery. The five different pretraining methods are shown in the table.
               </p>
               <br />
               <img src="assets/img/experiments.png" class="img-fluid" alt="" width="55%">
+              <center><p>Table 1: Pretraining Methods</p></center>
               <br />
               <p>
                 For each pretraining method, we apply and evaluate its transfer learning performance on five downstream
                 benchmark inference tasks
-                in table. To this end, we developed a pipeline for applying pre-training models.
-              </p>
-              <br />
-              <img src="assets/img/pipeline.png" class="img-fluid" alt="" width="75%">
-              <br />
-              <p>
-                As shown in the figure, the experiment mainly consists of two steps. First, we use the ResNet50 backbone
+                in Table 2. To this end, we developed a pipeline for applying pre-training models. As shown in the figure, the experiment mainly consists of two steps. First, we use the ResNet50 backbone
                 from each pretrained encoder
                 to extract representations. Second, we attach a decoder to the ResNet50 backbone, either Unet for
                 segmentation tasks or a fully
@@ -375,7 +371,12 @@
                 the benchmark dataset.
               </p>
               <br />
-              <img src="assets/img/metrics.png" class="img-fluid" alt="" width="50%">
+              <img src="assets/img/pipeline.png" class="img-fluid" alt="" width="75%">
+              <br />
+              <p>
+                A learning rate of 1e-3 with a batch size of 16 is used for all experiments using the Adam optimizer. We adopt the hyperparameters from Calhoun (2022) to have comparable results. We restrict the training dataset to 64, 128, 256, 512, and 1024 images. This allows us to evaluate the transfer learning performance of each pretraining method and dataset under real-world conditions where labeled datasets are limited.  Soft IoU loss based on Milletari (2016) is used for all semantic segmentation tasks, while cross-entropy loss is used for multi-class classification and multi-label classification. 
+              </p>
+              <br />
             </div>
           </div>
 
@@ -398,6 +399,15 @@
             </p>
             <br />
             <img src="assets/img/benchmark_datasets.png" class="img-fluid" alt="" width="90%">
+            <center><p>Table 2: Benchmark Datasets Information and Examples</p></center>
+            <br />
+            For all benchmark datasets, We evaluate GeoNet on these datasets by comparing its performance to the performance 
+            of fully-supervised models and other state-of-the-art SSL models as described in Table 1, following the steps 
+            described in section experiment design. In the fine-tuning phase on the labeled benchmark dataset, we use the Unet 
+            decoder for segmentation and linear classifier for classification tasks for all pre-training methods. The loss and 
+            accuracy metrics we adopted are reported as below.
+            <img src="assets/img/metrics.png" class="img-fluid" alt="" width="50%">
+            <center><p>Table 3: Evaluation Metrics for Each Benchmark Dataset</p></center>
           </div>
         </div>
 
