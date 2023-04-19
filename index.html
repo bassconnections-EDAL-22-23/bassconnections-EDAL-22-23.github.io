@@ -265,184 +265,80 @@
             <span>GeoNet Dataset</span>
             <h2 href="#geonet">GeoNet Dataset</h2>
           </div>
-          <!-- <div class="col-lg-12 col-md-12">
-            <p style="text-align:center">
-              Our work follows the below 5 stages:
-            </p>
-            <div class="text-center">
-              <img src="assets/img/5-stages.png" class="img-fluid" alt="" width="80%" height="auto">
-            </div>
-
-          </div> -->
           <div class="col-lg-6">
             <img src="assets/img/sample-distribution.png" class="img-fluid" alt="">
+            <caption>
+              The graph shows how we drew samples from different locations covering the entire globe except
+              Antarctica, demonstrating the geospatial diversity of GeoNet.
+            </caption>
+            <div class="spacer"> </div>
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
             <p>
-              <br />
               To create an immense dataset that captures geospatial, temporal, and semantic diversity, we select
-              features
-              that cover diversity across geographies (all continents and countries), cities (all major cities are
-              included),
-              rural regions (across all continents and countries), biomes (forests, deserts, tundra, etc.), areas
-              impacted by
-              global change (floods, fires, storms, etc.), across 8 half-seasons.
+              features that cover diversity across geographies (all continents and countries), cities (all major cities are
+              included), rural regions (across all continents and countries), biomes (forests, deserts, tundra, etc.), areas
+              impacted by global change (floods, fires, storms, etc.), across 8 half-seasons.
             </p>
             <p>
-              The graph on the left shows that we draw samples from different locations covering the entire globe except
-              Antarctica,
-              demonstrating the geospatial diversity of GeoNet.
+              Data was collected from 7.2M unique 2.24km x 2.24km areas on all continents except Antarctica. Urban and
+              rural areas comprise 60% of the 10 million images, 19% for natural disaster areas, 20% for land use and
+              cover, and 1% for specific built environment features. Furthermore, GeoNet is temporally diverse as it involved extracting
+              Sentinel-2 images from different time periods. 
+            </p>
+          </div>
+          <div class="row"> 
+            <p class="col-lg-12">
+              We used 4 sampling methods to build this dataset to have diversity across urban vs rural regions, across built vs natural environments, across different land covers, and across natural disaster prone regions. 
             </p>
           </div>
           <div class="row">
-            <p class="col-lg-4 col-md-6">
-              <strong>Method1</strong> consists of urban sampling and rural sampling. For urban sampling, we first draw
-              samples randomly from a
-              Multivariate normal (MVN) distribution centered at city centers worldwide with probability weighted by log
-              (population).
-              We then draw a random sample coordinate from the corresponding MVN distribution located within a 50 km
-              radius.
-              For rural sampling, we randomly sample locations with population densities between 5 and 250 people per
-              km^2 in a
-              30 X 30 arcsec (1 X 1 km at the equator approximately) resolution population density map.
-            </p>
-            <div class="col-lg-4 col-md-6">
-              <img src="assets/img/method1_urban.png" class="img-fluid" alt="">
-            </div>
-            <div class="col-lg-4 col-md-6">
-              <img src="assets/img/method1_rural.png" class="img-fluid" alt="">
-            </div>
+              <h4>Method 1: Urban vs Rural</h4>
+              <img src="assets/img/method1_urban.png" class="img-fluid col-6" alt="">
+              <img src="assets/img/method1_rural.png" class="img-fluid col-6" alt="">
+              <caption>The first method consists of urban sampling and rural sampling. For urban sampling, we first draw samples randomly from a Multivariate normal (MVN) distribution centered at city centers worldwide with probability weighted by log (population). We then draw a random sample coordinate from the corresponding MVN distribution located within a 50 km radius. For rural sampling, we randomly sample locations with population densities between 5 and 250 people per km^2 in a 30 X 30 arcsec (1 X 1 km at the equator approximately) resolution population density map.</caption>
+              <div class="spacer"></div>
           </div>
           <div class="row">
-            <div class="col-lg-3 col-md-6">
-              <img src="assets/img/method2_built.png" class="img-fluid" alt="">
-            </div>
-            <div class="col-lg-3 col-md-6">
-              <img src="assets/img/method3_landtype.png" class="img-fluid" alt="">
-            </div>
-            <div class="col-lg-3 col-md-6">
-              <img src="assets/img/method4_natural_disaster.png" class="img-fluid" alt="">
-            </div>
-            <p class="col-lg-3 col-md-6">
-              <strong>Method2</strong> includes all the coordinates of major human-built features that are associated
-              with climate change,
-              including airports, mining sites, power plants, ports, oil rigs, wind turbines, and dams.
-              <strong>Method3</strong> uses a stratified sampling approach to include images from 10 different land
-              types,
-              including artificial land, cropland, grassland, tree-covered areas etc.
-              <strong>Method4</strong> samples locations vulnerable to climate change-related natural disasters. For
-              each category of natural disaster
-              (wildfires, cyclones, droughts, and floods), we use a “proxy variable” as the probability in a weighted
-              random sampling,
-              which either quantifies the severity of the disaster or its occurrence frequency.
-            </p>
+            <h4>Method 2: Built vs Natural Environment</h4>
+            <img src="assets/img/method2_built.png" class="img-fluid half-screen" alt="">
+            <caption>The second method includes Seven categories of human-built features associated with climate change globally are identified using various datasets resulting in around 82,000 coordinates. all the coordinates of major human-built features that are associated with climate change, including airports, mining sites, power plants, ports, oil rigs, wind turbines, and dams. </caption>
+            <div class="spacer"></div>
+          </div>
+          <div class="row">
+            <h4>Method 3: Land Type</h4>
+            <img src="assets/img/method3_landtype.png" class="img-fluid half-screen" alt="">
+            <caption>The third method uses a stratified sampling approach to include a fixed amount of images are included for 11 land cover types: Artificial land, Cropland, Grassland, Tree-covered areas, Shrubs-covered areas, Herbaceous vegetation that is aquatic or regularly flooded, Mangroves, Sparse vegetation, Bare soil, Snow and glaciers, Water bodies.
+            </caption>
+            <div class="spacer"></div>
+          </div>
+          <div class="row">
+            <h4>Method 4: Natural Disasters</h4>
+            <img src="assets/img/method4_natural_disaster.png" class="img-fluid half-screen" alt="">
+            <caption>The fourth and final method samples locations vulnerable to climate change-related natural disasters. For each of the four categories of natural disaster (wildfires, cyclones, droughts, and floods), we use a “proxy variable” as the probability in a weighted random sampling, which either quantifies the severity of the disaster or its occurrence frequency.</caption>
+            <div class="spacer"></div>
           </div>
         </div>
 
-        <div id="geonet" class="col-lg-12 col-md-12">
-          <div class="icon-box">
-            <!-- <div class="icon"><i class="bx bx-file"></i></div> -->
-            <h4><a href="#geonet2">GeoNet Dataset</a></h4>
-            <p><em>Scale</em>:&nbsp;
-              Data was collected from 7.2M unique 2.24km x 2.24km areas on all continents except Antarctica. Urban and
-              rural areas comprise 60% of the 10 million images, 19% for natural disaster areas, 20% for land use and
-              cover, and 1% for specific built environment features.</p>
-            <p><br></p>
-            <p><em>Temporal Collection</em>: Furthermore, GeoNet is temporally diverse as it involved extracting
-              Sentinel-2 images from different time periods.</p>
-
-            <p><em>Sampling Strategy with Spatial Sampling:</em></p>
-
-            <p style="margin-left: 25px;">1. Population-based Sampling:</p>
-
-            <p style="margin-left: 50px;">Using population data, samples are generated in urban and rural regions.</p>
-
-            <p style="margin-left: 50px;">To mimic population distribution in urban regions, samples are drawn
-              randomly from a Multivariate normal (MVN) distribution centered at city centers worldwide with
-              probability weighted by log (population)</p>
-
-            <p style="margin-left: 50px;">For rural areas, locations are randomly sampled with population densities
-              between five and 250 people per km^2 in a 30X30 arcsec (1 X 1 km at the equator approximately)
-              resolution population density map</p>
-
-            <p style="margin-left: 25px;">2. Targeted Built Features:</p>
-
-            <p style="margin-left: 50px;">Seven categories of human-built features associated with climate change
-              globally are identified using various datasets resulting in around 82,000 coordinates.</p>
-
-
-            <p style="margin-left: 25px;">3. Stratified Sampling by Land Cover Types:</p>
-
-            <p style="margin-left: 50px;">A fixed amount of coordinates are included for 11 land cover types:</p>
-            <ul style="margin-left: 50px;">
-              <li>
-                <p>Artificial land</p>
-              </li>
-              <li>
-                <p>Cropland</p>
-              </li>
-              <li>
-                <p>Grassland</p>
-              </li>
-              <li>
-                <p>Tree-covered areas</p>
-              </li>
-              <li>
-                <p>Shrubs-covered areas</p>
-              </li>
-              <li>
-                <p>Herbaceous vegetation that is aquatic or regularly flooded</p>
-              </li>
-              <li>
-                <p>Mangroves</p>
-              </li>
-              <li>
-                <p>Sparse vegetation</p>
-              </li>
-              <li>
-                <p>Bare soil</p>
-              </li>
-              <li>
-                <p>Snow and glaciers</p>
-              </li>
-              <li>
-                <p>Water bodies</p>
-              </li>
-            </ul>
-
-            <p style="margin-left: 25px;">4. Locations Vulnerable to Natural Disasters are Included:</p>
-            <ul style="margin-left: 50px">
-              <li>
-                <p>Wildfires</p>
-              </li>
-              <li>
-                <p>Cyclones</p>
-              </li>
-              <li>
-                <p>Droughts</p>
-              </li>
-              <li>
-                <p>Floods</p>
-              </li>
-            </ul>
-            <p><em>Sampling Strategy with a Grid-Based Approach:</em></p>
-
-            <p style="margin-left: 25px;">Key Aim: To avoid duplications and overlaps in extracted images</p>
-
-            <p style="margin-left: 25px;">A 2.24x2.24 km grid is defined to match the image size for SwAV&rsquo;s
-              input dimensions (224x224) and the resolution of Sentinel-2 images (10 m). Mapping coordinates into a
-              discrete grid allows for the removal of nearby locations with overlapping scenes.</p>
-
-            <p style="margin-left: 25px;">Coordinated used to extract Sentinel-2 images are collected with various
-              considerations:</p>
-
-            <p style="margin-left: 50px;">1. 10 million samples are generated using all four sampling methods after
+        <div class="row">
+          <h5> Sampling Strategy with a Grid-Based Approach to avoid duplications and overlaps in extracted images </h5>
+          <p> A 2.24x2.24 km grid is defined to match the image size for SwAV's
+            input dimensions (224x224) and the resolution of Sentinel-2 images (10 m). Mapping coordinates into a
+            discrete grid allows for the removal of nearby locations with overlapping scenes. Coordinated used to extract Sentinel-2 images are collected with various
+            considerations:
+          </p>
+          <ol>
+            <li>
+              10 million samples are generated using all four sampling methods after
               which the corresponding grid cells that contain these coordinates are determined. Images from
-              oversampled grid cells are deleted by limited the number of images per grid cell to 4.</p>
-
-            <p style="margin-left: 50px;">2. If a grid cell is sampled more than once, its corresponding images from
+              oversampled grid cells are deleted by limited the number of images per grid cell to 4.
+            </li>
+            <li>
+              If a grid cell is sampled more than once, its corresponding images from
               different search periods are extracted enabling seasonal temporal diversity and reducing redundancy of
-              the view.</p>
+              the view.
+            </li>
+          </ol>
           </div>
         </div>
 
@@ -770,257 +666,6 @@
 
       </div>
     </section><!-- End Future Steps Section -->
-
-    <!-- ======= Counts Section ======= -->
-    <!-- <section id="counts" class="counts">
-      <div class="container">
-
-        <div class="row counters">
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Clients</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Projects</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Hours Of Support</p>
-          </div>
-
-          <div class="col-lg-3 col-6 text-center">
-            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-            <p>Hard Workers</p>
-          </div>
-
-        </div>
-
-      </div>
-    </section> -->
-    <!-- End Counts Section -->
-
-    <!-- ======= Portfolio Section ======= -->
-    <!-- <section id="portfolio" class="portfolio">
-      <div class="container">
-
-        <div class="section-title">
-          <span>Portfolio</span>
-          <h2>Portfolio</h2>
-          <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 1</h4>
-              <p>App</p>
-              <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 2</h4>
-              <p>App</p>
-              <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 2</h4>
-              <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 2</h4>
-              <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 3</h4>
-              <p>App</p>
-              <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 1</h4>
-              <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 3</h4>
-              <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section> -->
-    <!-- End Portfolio Section -->
-
-    <!-- ======= Testimonials Section ======= -->
-    <!-- <section id="testimonials" class="testimonials section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <span>Testimonials</span>
-          <h2>Testimonials</h2>
-          <p>Sit sint consectetur velit quisquam cupiditate impedit suscipit alias</p>
-        </div>
-
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-              </div>
-            </div>
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section> -->
-    <!-- End Testimonials Section -->
-
-    <!-- ======= Cta Section ======= -->
-    <!-- <section id="cta" class="cta">
-      <div class="container">
-
-        <div class="text-center">
-          <h3>Call To Action</h3>
-          <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <a class="cta-btn" href="#">Call To Action</a>
-        </div>
-
-      </div>
-    </section> -->
-    <!-- End Cta Section -->
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg">

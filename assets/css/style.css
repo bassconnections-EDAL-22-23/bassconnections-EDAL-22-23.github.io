@@ -1405,3 +1405,8 @@ section {
     text-align-last: center;
   }
 }
+
+.half-screen {
+  width: 50vw;
+  margin: auto;
+}
